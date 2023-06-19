@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Call";
+}
+
+<script src="https://kit.fontawesome.com/a36c5d7fce.js" crossorigin="anonymous"></script>
+
+
+<script>
+
+    function addValue(value) {
+        var result = $('#phone');
+        result.val(result.val() + value);
+    }
+
+    function clearValue() {
+        $('#phone').val('');
+    }
+</script>
+<style>
+    .number-button {
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 5px;
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+        .number-button:hover {
+            background-color: #ccc;
+            color: #fff;
+        }
+
+        .number-button:active {
+            background-color: #999;
+            color: #fff;
+        }
+
+    .call-button {
+        font-size: 24px;
+        width: 100px;
+        height: 60px;
+        border: 1px solid #4cae4c;
+        border-radius: 4px;
+        margin: 5px;
+        background-color: #5cb85c;
+        color: #fff;
+    }
+
+        .call-button:hover {
+            background-color: #55FF33;
+            color: #fff;
+        }
+
+        .call-button:active {
+            background-color: #55FF33;
+            color: #fff;
+        }
+
+    .clear-button {
+        font-size: 24px;
+        width: 100px;
+        height: 60px;
+        border: 1px solid #d43f3a;
+        border-radius: 4px;
+        margin: 5px;
+        background-color: #d9534f;
+        color: #fff;
+    }
+
+        .clear-button:hover {
+            background-color: #FF5233;
+            color: #fff;
+        }
+
+        .clear-button:active {
+            background-color: #FF5233;
+            color: #fff;
+        }
+
+    input {
+        font-size: 24px;
+        width: 180px;
+        height: 60px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px;
+        text-align: center;
+    }
+</style>
+<form class="numpad" action="@Url.Action("Index", "MakeCall")" method="post">
+
+    <input type="text" id="phone" name="phone">
+    <br>
+    <button class="number-button" type="button" onclick="addValue(1)">1</button>
+    <button class="number-button" type="button" onclick="addValue(2)">2</button>
+    <button class="number-button" type="button" onclick="addValue(3)">3</button>
+    <br>
+    <button class="number-button" type="button" onclick="addValue(4)">4</button>
+    <button class="number-button" type="button" onclick="addValue(5)">5</button>
+    <button class="number-button" type="button" onclick="addValue(6)">6</button>
+    <br>
+    <button class="number-button" type="button" onclick="addValue(7)">7</button>
+    <button class="number-button" type="button" onclick="addValue(8)">8</button>
+    <button class="number-button" type="button" onclick="addValue(9)">9</button>
+    <br>
+    <button class="number-button" type="button" onclick="addValue(0)">0</button>
+    <br>
+    <button class="clear-button" type="button" onclick="clearValue()">Clear</button>
+    <button class="call-button" type="submit"><i class="fa-solid fa-phone"></i></button>
+</form>
+
